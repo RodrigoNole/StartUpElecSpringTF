@@ -1,0 +1,19 @@
+package pe.edu.upc.StartUp.Elec.Service;
+
+import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
+import pe.edu.upc.StartUp.Elec.Model.Entity.Employee;
+
+import java.util.List;
+
+public interface EmployeeService {
+
+    public List<Employee> getAll();
+    public List<Employee> findByDni(Integer dni);
+
+    public Employee save (Employee employee);
+
+    public Employee update (Employee employee);
+
+    public void deleteById (Integer id);
+
+}
