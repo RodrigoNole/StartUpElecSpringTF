@@ -1,7 +1,7 @@
 package pe.edu.upc.StartUp.Elec.model.entity;
 
-import java.util.Date;
-import java.util.List;
+
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,10 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 @Entity
 @Table(name = "publications",indexes= {@Index(columnList="name",name="publication_index_name")})

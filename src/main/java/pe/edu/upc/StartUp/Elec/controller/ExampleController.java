@@ -5,11 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/publicacion")
-public class PublicationController {
-	
+@RequestMapping("/ejemplo")
+public class ExampleController {
+
 	@GetMapping
-	public String publicacion() {
-		return "publication";
+	public String ejemplo() {
+		return "example";
+	}
+	
+	@GetMapping("base")
+	public String base() {
+		return "layout/base";
 	}
 }
