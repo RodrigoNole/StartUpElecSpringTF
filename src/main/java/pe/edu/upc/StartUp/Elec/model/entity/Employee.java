@@ -1,101 +1,54 @@
-package pe.edu.upc.StartUp.Elec.model.entity;
+package pe.edu.upc.StartUp.Elec.Model.Entity;
 
-import java.util.ArrayList;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Index;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
+@Getter
+@Setter
 @Entity
-@Table(name = " employees",indexes= {@Index(columnList="name",name="employee_index_name")})
-public class Employee {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+@Table(name = "Employees")
+public class Employee implements Serializable {
 
-@Column(name= "name", length = 50,nullable = false)
-	private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name= "employee_id",nullable = false)
+    private Integer id;
 
-@Column(name= "dni", length = 8,nullable = false)
-	private String dni;
+    @NotBlank(message = "El DNI no debe estar en blanco")
+    @NotNull(message = "El DNI debe contener valor")
+    @Size(max = 8, message = "El tamaño no debe ser mayor a 8")
+    @Column(name= "employee_dni", length = 8,nullable = false)
+    private Integer dni;
 
-@Column(name= "last_name", length = 50,nullable = false)
-	private String lastname;
+    @NotBlank(message = "El nombre no debe estar en blanco")
+    @NotNull(message = "El nombre debe contener valor")
+    @Size(max = 50, message = "El tamaño no debe ser mayor a 50")
+    @Column(name= "employee_first_name", length = 50,nullable = false)
+    private String firstName;
 
-@Column(name= "email", length = 50,nullable = false)
-	private String email;
+    @NotBlank(message = "El apellido no debe estar en blanco")
+    @NotNull(message = "El apellido debe contener valor")
+    @Size(max = 50, message = "El tamaño no debe ser mayor a 50")
+    @Column(name= "employee_last_name", length = 50,nullable = false)
+    private String lastName;
 
-@Column(name= "image", length = 500)
-	private String image;
+    @NotBlank(message = "El email no debe estar en blanco")
+    @NotNull(message = "El email debe contener valor")
+    @Size(max = 50, message = "El tamaño no debe ser mayor a 50")
+    @Column(name= "employee_email", length = 50,nullable = false)
+    private String email;
 
-@OneToMany(mappedBy = "employee")
-	private List<Publication> publications;
+    @Size(max = 500, message = "El tamaño no debe ser mayor a 500")
+    @Column(name= "employee_image", length = 500,nullable = false)
+    private String image;
 
-public Employee() {
-	publications =new ArrayList<>();
-	
-}
-
-public Integer getId() {
-	return id;
-}
-
-public void setId(Integer id) {
-	this.id = id;
-}
-
-public String getName() {
-	return name;
-}
-
-public void setName(String name) {
-	this.name = name;
-}
-
-public String getDni() {
-	return dni;
-}
-
-public void setDni(String dni) {
-	this.dni = dni;
-}
-
-public String getLastname() {
-	return lastname;
-}
-
-public void setLastname(String lastname) {
-	this.lastname = lastname;
-}
-
-public String getEmail() {
-	return email;
-}
-
-public void setEmail(String email) {
-	this.email = email;
-}
-
-public String getImage() {
-	return image;
-}
-
-public void setImage(String image) {
-	this.image = image;
-}
-
-public List<Publication> getPublications() {
-	return publications;
-}
-
-public void setPublications(List<Publication> publications) {
-	this.publications = publications;
-}
-
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Publication> publications;
 }

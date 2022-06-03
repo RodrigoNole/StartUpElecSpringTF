@@ -1,15 +1,19 @@
-package pe.edu.upc.StartUp.Elec.controller;
+package pe.edu.upc.StartUp.Elec.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.StartUp.Elec.Service.PublicationService;
+
+import java.util.List;
 
 @Controller
-@RequestMapping("/publicacion")
+@RequestMapping("/publication/")
 public class PublicationController {
-	
-	@GetMapping
-	public String publicacion() {
-		return "publication";
-	}
+
+    @Autowired
+    private PublicationService publicationService;
+
+
+
 }
