@@ -1,15 +1,19 @@
-package pe.edu.upc.StartUp.Elec.business.crud;
+package pe.edu.upc.StartUp.Elec.Business.Crud;
 
-
+import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
+import pe.edu.upc.StartUp.Elec.Model.Entity.Employee;
 
 import java.util.List;
 
-import pe.edu.upc.StartUp.Elec.model.entity.Employee;
+public interface EmployeeService {
 
+    public List<Employee> getAll();
+    public List<Employee> findByDni(Integer dni);
 
+    public Employee save (Employee employee);
 
+    public Employee update (Employee employee);
 
-public interface EmployeeService extends CrudService<Employee, Integer>{
-	
-	public List<Employee> findByName(String name) throws Exception;
+    public void deleteById (Integer id);
+
 }

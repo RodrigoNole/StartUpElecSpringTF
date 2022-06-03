@@ -1,15 +1,18 @@
-package pe.edu.upc.StartUp.Elec.business.crud;
+package pe.edu.upc.StartUp.Elec.Business.Crud;
 
-
+import pe.edu.upc.StartUp.Elec.Model.Entity.Publication;
 
 import java.util.List;
 
-import pe.edu.upc.StartUp.Elec.model.entity.Publication;
+public interface PublicationService {
 
+    public List<Publication> getAll();
 
+    public List<Publication> findByName(String name);
 
-public interface PublicationService extends CrudService<Publication, Integer>{
+    public Publication save (Publication publication);
 
-	public List<Publication> findByName(String name) throws Exception ;
+    public Publication update (Publication publication);
 
+    public void deleteById (Integer id);
 }
