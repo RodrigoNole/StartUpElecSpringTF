@@ -1,16 +1,12 @@
-package pe.edu.upc.StartUp.Elec.model.repository;
-
-import java.util.List;
+package pe.edu.upc.StartUp.Elec.Model.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import pe.edu.upc.StartUp.Elec.Model.Entity.Employee;
 
-import pe.edu.upc.StartUp.Elec.model.entity.Employee;
-
+import java.util.List;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
-
-	List<Employee> findByName(String name) throws Exception;
-
+public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
+    List<Employee> findByDni (Integer dni);
 }
