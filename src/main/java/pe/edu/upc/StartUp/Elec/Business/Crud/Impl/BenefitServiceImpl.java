@@ -1,10 +1,10 @@
-package pe.edu.upc.StartUp.Elec.Service.Impl;
+package pe.edu.upc.StartUp.Elec.Business.Crud.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
 import pe.edu.upc.StartUp.Elec.Model.Repository.BenefitRepository;
-import pe.edu.upc.StartUp.Elec.Service.BenefitService;
+import pe.edu.upc.StartUp.Elec.Business.Crud.BenefitService;
 
 import java.util.List;
 
