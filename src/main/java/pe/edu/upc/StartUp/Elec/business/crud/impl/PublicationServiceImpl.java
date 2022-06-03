@@ -1,35 +1,48 @@
-package pe.edu.upc.StartUp.Elec.business.crud.impl;
+package pe.edu.upc.StartUp.Elec.Business.Crud.Impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import pe.edu.upc.StartUp.Elec.Model.Entity.Publication;
+import pe.edu.upc.StartUp.Elec.Model.Repository.PublicationRepository;
+import pe.edu.upc.StartUp.Elec.Business.Crud.PublicationService;
 
 import java.util.List;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Service;
-
-import pe.edu.upc.StartUp.Elec.business.crud.PublicationService;
-import pe.edu.upc.StartUp.Elec.model.entity.Publication;
-import pe.edu.upc.StartUp.Elec.model.repository.PublicationRepository;
-
-
-
-
-
 @Service
-public class PublicationServiceImpl implements PublicationService{
+public class PublicationServiceImpl implements PublicationService {
 
-	@Autowired
-	private PublicationRepository publicationRepository;
-	
-	@Override
-	public JpaRepository<Publication, Integer> getJpaRepository() {
-		// TODO Auto-generated method stub
-		return this.publicationRepository;
-	}
- 
-	@Override
-	public List<Publication> findByName(String name) throws Exception {
-		// TODO Auto-generated method stub
-		return this.publicationRepository.findByName(name);
-	}
+    @Autowired
+    private PublicationRepository publicationRepository;
+
+
+    @Override
+    public List<Publication> getAll() {
+
+        return publicationRepository.findAll();
+    }
+
+    @Override
+    public List<Publication> findByName(String name) {
+
+        return publicationRepository.findByName(name);
+    }
+
+    @Override
+    public Publication save(Publication publication) {
+
+        return publicationRepository.save(publication);
+    }
+
+    @Override
+    public Publication update(Publication publication) {
+
+        return publicationRepository.save(publication);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+
+        publicationRepository.deleteById(id);
+    }
+
 }
