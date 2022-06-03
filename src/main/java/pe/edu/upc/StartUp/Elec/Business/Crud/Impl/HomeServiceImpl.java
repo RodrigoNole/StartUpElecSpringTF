@@ -1,10 +1,10 @@
-package pe.edu.upc.StartUp.Elec.Service.Impl;
+package pe.edu.upc.StartUp.Elec.Business.Crud.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.StartUp.Elec.Model.Entity.Home;
 import pe.edu.upc.StartUp.Elec.Model.Repository.HomeRepository;
-import pe.edu.upc.StartUp.Elec.Service.HomeService;
+import pe.edu.upc.StartUp.Elec.Business.Crud.HomeService;
 
 import java.util.List;
 

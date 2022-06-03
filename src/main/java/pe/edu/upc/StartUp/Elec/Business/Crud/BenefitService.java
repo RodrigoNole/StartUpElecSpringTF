@@ -1,4 +1,4 @@
-package pe.edu.upc.StartUp.Elec.Service;
+package pe.edu.upc.StartUp.Elec.Business.Crud;
 
 import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
 
