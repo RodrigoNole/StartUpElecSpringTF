@@ -30,20 +30,4 @@ public class BenefitController {
         return "benefits/list-benefits";
     }
 
-    @GetMapping("new")
-    public String newBenefit(Model model) {
-    	Benefit benefit =new Benefit();
-    	model.addAttribute("benefit", benefit);
-    	return "benefits/new-benefits";
-    }
-    
-    @PostMapping("savenew")
-    public String saveBenefit(Model model,@ModelAttribute("benefit")Benefit benefit) {
-    	try{Benefit benefitSaved= benefitService.save(benefit);
-    	}catch (Exception e){
-    		e.printStackTrace();
-    	}
-    	return "redirect:/benefits";
-    }
-
 }
