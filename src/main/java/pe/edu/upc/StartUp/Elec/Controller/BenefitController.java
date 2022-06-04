@@ -18,6 +18,4 @@ public class BenefitController {
     public String index(Model model) {
         return "landingPage";
     }
-
-
 }
