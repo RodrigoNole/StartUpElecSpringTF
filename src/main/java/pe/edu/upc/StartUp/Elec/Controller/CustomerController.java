@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.StartUp.Elec.Business.Crud.CustomerService;
 
 @Controller
+
+@RequestMapping("/customers")
 @RequestMapping("/customer")
 @SessionAttributes("{customer}")
 public class CustomerController {

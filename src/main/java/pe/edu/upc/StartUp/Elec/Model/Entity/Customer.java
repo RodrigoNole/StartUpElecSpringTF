@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "Customers",indexes = {@Index(columnList = "firstName",name="customer_index_name")})
+@Table(name = "Customers",indexes = {@Index(columnList = "customer_first_name",name="customer_index_name")})
 public class Customer implements Serializable {
 
     @Id

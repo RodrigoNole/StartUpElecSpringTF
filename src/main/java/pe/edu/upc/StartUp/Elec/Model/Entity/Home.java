@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Table(name = "Homes",indexes = {@Index(columnList = "address",name="home_index_name")})
+@Table(name = "Homes",indexes = {@Index(columnList = "home_address",name="home_index_name")})
 public class Home implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
