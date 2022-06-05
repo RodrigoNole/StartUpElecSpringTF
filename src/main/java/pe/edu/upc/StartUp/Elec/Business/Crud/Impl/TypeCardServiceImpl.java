@@ -1,6 +1,7 @@
 package pe.edu.upc.StartUp.Elec.Business.Crud.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.StartUp.Elec.Model.Entity.TypeCard;
 import pe.edu.upc.StartUp.Elec.Model.Repository.TypeCardRepository;
@@ -35,4 +36,10 @@ public class TypeCardServiceImpl implements TypeCardService {
     public void deleteById(Integer id) {
         typeCardRepository.deleteById(id);
     }
+
+	@Override
+	public JpaRepository<TypeCard, Integer> getJpaRepository() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

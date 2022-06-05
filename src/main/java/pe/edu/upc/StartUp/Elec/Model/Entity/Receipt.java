@@ -11,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "Receipts")
+@Table(name = "Receipts",indexes = {@Index(columnList = "month",name="receipt_index_name")})
 public class Receipt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

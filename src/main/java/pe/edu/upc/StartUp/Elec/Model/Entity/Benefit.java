@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Table(name = "Benefits")
+@Table(name = "Benefits",indexes = {@Index(columnList = "name",name="benefit_index_name")})
 public class Benefit implements Serializable {
 
     @Id

@@ -1,6 +1,7 @@
 package pe.edu.upc.StartUp.Elec.Business.Crud.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.StartUp.Elec.Model.Entity.Receipt;
 import pe.edu.upc.StartUp.Elec.Model.Repository.ReceiptRepository;
@@ -43,6 +44,12 @@ public class ReceiptServiceImpl implements ReceiptService {
 
         receiptRepository.deleteById(id);
     }
+
+	@Override
+	public JpaRepository<Receipt, Integer> getJpaRepository() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }
