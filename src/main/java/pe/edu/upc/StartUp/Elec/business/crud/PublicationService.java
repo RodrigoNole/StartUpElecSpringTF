@@ -1,11 +1,10 @@
 package pe.edu.upc.StartUp.Elec.Business.Crud;
 
-
 import pe.edu.upc.StartUp.Elec.Model.Entity.Publication;
 
 import java.util.List;
 
-public interface PublicationService extends CrudService<Publication, Integer>{
+public interface PublicationService {
 
     public List<Publication> getAll();
 
