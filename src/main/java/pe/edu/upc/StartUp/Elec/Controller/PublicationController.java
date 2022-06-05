@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.StartUp.Elec.Business.Crud.PublicationService;
 
 @Controller
-@RequestMapping("/publication/")
+@RequestMapping("/publication")
 public class PublicationController {
 
     @Autowired
     private PublicationService publicationService;
+
+
 
 
 
