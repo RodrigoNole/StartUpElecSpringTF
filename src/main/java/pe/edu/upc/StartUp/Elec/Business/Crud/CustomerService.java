@@ -1,10 +1,11 @@
 package pe.edu.upc.StartUp.Elec.Business.Crud;
 
+
 import pe.edu.upc.StartUp.Elec.Model.Entity.Customer;
 
 import java.util.List;
 
-public interface CustomerService {
+public interface CustomerService extends CrudService<Customer, Integer>{
     public List<Customer> getAll();
 
     public List<Customer> findByDni(Integer dni);
