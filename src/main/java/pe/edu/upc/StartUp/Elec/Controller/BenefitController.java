@@ -63,4 +63,37 @@ public class BenefitController {
 		}
 		return "students/edit-benefits";
 	}
+    
+    @PostMapping("{id}/update")	
+	public String updateBenefit(Model model, @ModelAttribute("student") Benefit benefit, 
+			@PathVariable("id") Integer id) {
+		try {
+			if (benefitService.existsById(id)) {
+				benefitService.update(benefit);
+			} else {
+				return "redirect:/benefits";
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/benefits";
+	}
+    
+    @GetMapping("{id}/del")	
+	public String deleteBenefit(Model model, @PathVariable("id") Integer id) {
+		try {
+			if (benefitService.existsById(id)) {
+				benefitService.deleteById(id);
+			} else {
+				return "redirect:/benefits";
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/benefits";
+	}
 }
