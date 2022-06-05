@@ -31,6 +31,7 @@ public class BenefitController {
         return "benefits/list-benefits";
     }
 
+
     @GetMapping("new")
     public String newBenefit(Model model) {
     	Benefit benefit =new Benefit();
@@ -63,4 +64,6 @@ public class BenefitController {
 		}
 		return "students/edit-benefits";
 	}
+
+
 }
