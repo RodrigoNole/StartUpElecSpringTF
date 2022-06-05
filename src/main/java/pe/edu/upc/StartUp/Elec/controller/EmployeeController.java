@@ -7,6 +7,7 @@ import pe.edu.upc.StartUp.Elec.Business.Crud.EmployeeService;
 
 @Controller
 @RequestMapping("/employee")
+@SessionAttributes("{employee}")
 public class EmployeeController {
 
     @Autowired

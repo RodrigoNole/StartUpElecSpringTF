@@ -7,6 +7,7 @@ import pe.edu.upc.StartUp.Elec.Business.Crud.HomeService;
 
 @Controller
 @RequestMapping("/home")
+@SessionAttributes("{home}")
 public class HomeController {
     @Autowired
     private HomeService homeService;
