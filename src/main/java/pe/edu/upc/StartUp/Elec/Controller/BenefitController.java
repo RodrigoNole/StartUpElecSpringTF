@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.StartUp.Elec.Business.Crud.BenefitService;
+import pe.edu.upc.StartUp.Elec.Business.Crud.CustomerService;
 import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
+import pe.edu.upc.StartUp.Elec.Model.Entity.Customer;
 
 
 @Controller
@@ -18,6 +20,9 @@ public class BenefitController {
 
     @Autowired
     private BenefitService benefitService;
+    
+    @Autowired
+    private CustomerService customerService;
 
     @GetMapping
     public String listBenefit(Model model) {
@@ -35,6 +40,12 @@ public class BenefitController {
     public String newBenefit(Model model) {
     	Benefit benefit =new Benefit();
     	model.addAttribute("benefit", benefit);
+    	try {
+			List<Customer> customers = customerService.getAll();
+			model.addAttribute("customers", customers);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
     	return "benefits/new-benefits";
     }
     
@@ -53,6 +64,8 @@ public class BenefitController {
 			if (benefitService.existsById(id)) {
 				Optional<Benefit> optional = benefitService.findById(id);
 				model.addAttribute("student", optional.get());
+				List<Customer> customers = customerService.getAll();
+				model.addAttribute("customers", customers);
 			} else {
 				return "redirect:/benefits";
 			}

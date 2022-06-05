@@ -42,6 +42,16 @@
 		    </div>
 		  </div>
 		  
+		   <div class="col-md-4">
+		    <label for="customer" class="form-label">Customer</label>
+		    <select class="form-select" th:field="*{customer}" required>
+		      <option selected disabled value="">Choose...</option>
+		      <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.firstName}">...</option>
+		    </select>
+		    <div class="invalid-feedback">
+		      Please select a valid state.
+		    </div>
+		  </div>
 		  
 		  
 		  <div class="col-12" style="text-align: center;">
