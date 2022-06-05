@@ -11,7 +11,7 @@ import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
 
 
 @Controller
-@RequestMapping("/benefits")
+@RequestMapping("/benefit")
 @SessionAttributes("{benefit}")
 public class BenefitController {
 
@@ -27,7 +27,7 @@ public class BenefitController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return "benefits/list-benefits";
+        return "landingPage";
     }
 
 }
