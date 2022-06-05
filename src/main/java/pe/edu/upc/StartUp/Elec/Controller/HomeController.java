@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.StartUp.Elec.Business.Crud.HomeService;
 
 @Controller
-@RequestMapping("/home/")
+@RequestMapping("/home")
+@SessionAttributes("{home}")
 public class HomeController {
     @Autowired
     private HomeService homeService;
