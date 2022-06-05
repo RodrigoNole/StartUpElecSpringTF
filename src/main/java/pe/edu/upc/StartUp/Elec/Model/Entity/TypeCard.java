@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "TypeCards")
+@Table(name = "TypeCards",indexes = {@Index(columnList = "number",name="typeCard_index_name")})
 public class TypeCard implements Serializable {
 
     @Id
