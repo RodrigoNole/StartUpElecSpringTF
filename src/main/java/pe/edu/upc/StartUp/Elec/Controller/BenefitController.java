@@ -1,6 +1,7 @@
 package pe.edu.upc.StartUp.Elec.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,4 +47,20 @@ public class BenefitController {
     	return "redirect:/benefits";
     }
 
+    @GetMapping("{id}/edit")	
+	public String editBenefit(Model model, @PathVariable("id") Integer id) {				
+		try {
+			if (benefitService.existsById(id)) {
+				Optional<Benefit> optional = benefitService.findById(id);
+				model.addAttribute("student", optional.get());
+			} else {
+				return "redirect:/benefits";
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "students/edit-benefits";
+	}
 }

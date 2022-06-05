@@ -1,11 +1,11 @@
 package pe.edu.upc.StartUp.Elec.Business.Crud;
 
-import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
+
 import pe.edu.upc.StartUp.Elec.Model.Entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeService {
+public interface EmployeeService extends CrudService<Employee, Integer>{
 
     public List<Employee> getAll();
     
