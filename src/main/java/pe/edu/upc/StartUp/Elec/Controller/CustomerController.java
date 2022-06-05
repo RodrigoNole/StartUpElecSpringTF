@@ -7,6 +7,7 @@ import pe.edu.upc.StartUp.Elec.Business.Crud.CustomerService;
 
 @Controller
 @RequestMapping("/customer")
+@SessionAttributes("{customer}")
 public class CustomerController {
 
     @Autowired
