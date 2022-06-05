@@ -5,4 +5,29 @@ section{
 	margin-top: -100px;
 	border: 5px solid #1F232C;
 }
+section[id]{
+	scroll-margin-top: -10px;
+}
 
+html{
+	scroll-behavior: smooth;
+}
+.inicio h1{
+	font-size: 3rem;
+	color: #ffffff;
+	position: absolute;
+	top: 50%;
+	left: 80%;
+	transform: translate(-50%,-50%);
+	text-shadow: 0 0 8px rgb(0, 0, 0);
+}
+
+.inicio .lema{
+	width: 1000%;
+	height: 10%;
+	position: absolute;
+	color: #1F232C;
+	top: 33%;
+	left: 0%;
+	transform: translate(-50%,-50%);
+}
