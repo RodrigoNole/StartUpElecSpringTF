@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.StartUp.Elec.Business.Crud.ReceiptService;
 
 @Controller
-@RequestMapping("/receipt/")
+@RequestMapping("/receipt")
+@SessionAttributes("{receipt}")
 public class ReceiptController {
 
     @Autowired

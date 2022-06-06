@@ -7,12 +7,11 @@ import pe.edu.upc.StartUp.Elec.Business.Crud.PublicationService;
 
 @Controller
 @RequestMapping("/publication")
+@SessionAttributes("{publication}")
 public class PublicationController {
 
     @Autowired
     private PublicationService publicationService;
-
-
 
 
 

@@ -7,7 +7,8 @@ import pe.edu.upc.StartUp.Elec.Business.Crud.TypeCardService;
 
 
 @Controller
-@RequestMapping("/typeCard/")
+@RequestMapping("/typeCard")
+@SessionAttributes("{typeCard}")
 public class TypeCardController {
 
     @Autowired

@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.StartUp.Elec.Business.Crud.EmployeeService;
 
 @Controller
-@RequestMapping("/employee/")
+@RequestMapping("/employee")
+@SessionAttributes("{employee}")
 public class EmployeeController {
 
     @Autowired
