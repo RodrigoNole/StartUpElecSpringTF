@@ -8,6 +8,7 @@ import java.util.List;
 public interface EmployeeService {
 
     public List<Employee> getAll();
+    
     public List<Employee> findByDni(Integer dni);
 
     public Employee save (Employee employee);

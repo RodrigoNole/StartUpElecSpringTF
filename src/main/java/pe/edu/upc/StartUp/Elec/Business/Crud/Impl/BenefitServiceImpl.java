@@ -44,6 +44,6 @@ public class BenefitServiceImpl implements BenefitService {
 	@Override
 	public JpaRepository<Benefit, Integer> getJpaRepository() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.benefitRepository;
 	}
 }

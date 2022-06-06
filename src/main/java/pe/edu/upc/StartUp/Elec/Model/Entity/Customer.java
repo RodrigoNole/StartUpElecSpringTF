@@ -61,5 +61,85 @@ public class Customer implements Serializable {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Benefit> benefits;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getDni() {
+		return dni;
+	}
+
+	public void setDni(Integer dni) {
+		this.dni = dni;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public List<Home> getHomes() {
+		return homes;
+	}
+
+	public void setHomes(List<Home> homes) {
+		this.homes = homes;
+	}
+
+	public List<Publication> getPublications() {
+		return publications;
+	}
+
+	public void setPublications(List<Publication> publications) {
+		this.publications = publications;
+	}
+
+	public List<TypeCard> getTypeCards() {
+		return typeCards;
+	}
+
+	public void setTypeCards(List<TypeCard> typeCards) {
+		this.typeCards = typeCards;
+	}
+
+	public List<Benefit> getBenefits() {
+		return benefits;
+	}
+
+	public void setBenefits(List<Benefit> benefits) {
+		this.benefits = benefits;
+	}
+
 }
 
