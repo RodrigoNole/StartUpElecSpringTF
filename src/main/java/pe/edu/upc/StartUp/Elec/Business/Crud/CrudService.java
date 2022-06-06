@@ -29,7 +29,7 @@ public interface CrudService<T, ID> {
 		return getJpaRepository().findById(id);
 	}
 	
-	@Transactional
+	@Transactional(readOnly = true)
 	default List<T> getAll() throws Exception {
 		return getJpaRepository().findAll();
 	}
@@ -40,7 +40,7 @@ public interface CrudService<T, ID> {
 	}
 	
 	@Transactional(readOnly = true)
-	default boolean existsById(ID id)throws Exception{
+	default boolean existsById(ID id) throws Exception {
 		return getJpaRepository().existsById(id);
-	}	
+	}
 }

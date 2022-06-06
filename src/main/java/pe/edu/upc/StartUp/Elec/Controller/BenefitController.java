@@ -51,7 +51,8 @@ public class BenefitController {
     
     @PostMapping("savenew")
     public String saveBenefit(Model model,@ModelAttribute("benefit")Benefit benefit) {
-    	try{Benefit benefitSaved= benefitService.save(benefit);
+    	try{
+    		Benefit benefitSaved= benefitService.save(benefit);
     	}catch (Exception e){
     		e.printStackTrace();
     	}
@@ -63,7 +64,7 @@ public class BenefitController {
 		try {
 			if (benefitService.existsById(id)) {
 				Optional<Benefit> optional = benefitService.findById(id);
-				model.addAttribute("student", optional.get());
+				model.addAttribute("benefit", optional.get());
 				List<Customer> customers = customerService.getAll();
 				model.addAttribute("customers", customers);
 			} else {
@@ -74,7 +75,7 @@ public class BenefitController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "students/edit-benefits";
+		return "benefits/edit-benefits";
 	}
     
     @PostMapping("{id}/update")	
