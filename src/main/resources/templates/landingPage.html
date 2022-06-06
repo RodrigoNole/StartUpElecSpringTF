@@ -70,6 +70,8 @@
             autorizados a realizar el pago de sus recibos por temor a exponerse a un posible contagio. </p>
 
     </section>
+    <br>
+    <br>
     <section class="equipo" id="equipo">
         <br>
         <br>
@@ -115,11 +117,68 @@
         </div>
 
     </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="d-flex justify-content-center align-items-center " id="contactanos">
 
-    <section class="contactanos" id="contactanos">
+        <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">
+            <div class="mb-4 d-flex justify-content-start align-items-center">
 
+                <h4>  <i class="bi bi-chat-left-quote"></i> &nbsp; Contáctanos</h4>
+            </div>
+            <div class="mb-1">
+                <form id = "contacto" >
+                    <div class="mb-4 d-flex justify-content-between">
+                        <div>
+                            <label for="nombre"> <i class="bi bi-person-fill"></i> Nombre</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder= "ej: Luis" required>
+                            <div class="nombre text-danger "></div>
+                        </div>
+                        <div >
+                            <label for="apellido"> <i class="bi bi-person-bounding-box"></i> Apellido</label>
+                            <input type="text" class="form-control" name="apellido" id="apellido" placeholder= "ej: Murguía" required>
+                            <div class="apellido text-danger"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="correo"><i class="bi bi-envelope-fill"></i> Correo</label>
+                        <input type="email" class="form-control" name="correo" id="correo" placeholder= "ej: lmurguia@gmail.com" required>
+                        <div class="correo text-danger"></div>
+
+                    </div>
+                    <div class="mb-4">
+                        <label for="sexo"><i class="bi bi-gender-ambiguous"></i> Sexo: </label>
+                        <input type="radio" class="form-check-input"  name="sexo"  value="masculino" > &nbsp;&nbsp; Masculino
+                        <input type="radio" class="form-check-input" name="sexo"  value="femenino" >&nbsp;&nbsp; Femenino
+                        <div class="sexo text-danger"></div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="mensaje"> <i class="bi bi-chat-right-dots-fill" required></i> Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" class="form-control" placeholder="ej: buenos dias"></textarea>
+                        <div class="mensaje text-danger"></div>
+                    </div>
+
+                    <div class="mb-2">
+                        <button id ="botton" class="col-12 btn btn-warning d-flex justify-content-between ">
+                            <span>Enviar </span><i id="icono" class="bi bi-cursor-fill "></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
     </section>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </main>
 
 <footer>
@@ -135,5 +194,6 @@
         integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
         crossorigin="anonymous"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/index.js"></script>
 </body>
 </html>
