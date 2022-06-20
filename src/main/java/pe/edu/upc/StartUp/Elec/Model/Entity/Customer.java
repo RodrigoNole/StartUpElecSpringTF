@@ -25,7 +25,7 @@ public class Customer implements Serializable {
     @NotNull(message = "El DNI debe contener valor")
     @Size(max = 8, message = "El tamaño no debe ser mayor a 8")
     @Column(name = "customer_dni", length = 8, nullable = false)
-    private Integer dni;
+    private String dni;
 
     @NotBlank(message = "El nombre no debe estar en blanco")
     @NotNull(message = "El nombre debe contener valor")
@@ -61,6 +61,7 @@ public class Customer implements Serializable {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Benefit> benefits;
 
+   
 	public Integer getId() {
 		return id;
 	}
@@ -69,11 +70,11 @@ public class Customer implements Serializable {
 		this.id = id;
 	}
 
-	public Integer getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(Integer dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
