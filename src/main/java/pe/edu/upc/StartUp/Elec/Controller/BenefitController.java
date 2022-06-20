@@ -14,7 +14,7 @@ import pe.edu.upc.StartUp.Elec.Model.Entity.Customer;
 
 
 @Controller
-@RequestMapping("/benefit")
+@RequestMapping("/benefits")
 @SessionAttributes("{benefit}")
 public class BenefitController {
 
@@ -33,7 +33,7 @@ public class BenefitController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return "landingPage";
+        return "benefits/list-benefits";
     }
 
     @GetMapping("new")
@@ -79,7 +79,7 @@ public class BenefitController {
 	}
     
     @PostMapping("{id}/update")	
-	public String updateBenefit(Model model, @ModelAttribute("student") Benefit benefit, 
+	public String updateBenefit(Model model, @ModelAttribute("benefit") Benefit benefit, 
 			@PathVariable("id") Integer id) {
 		try {
 			if (benefitService.existsById(id)) {
