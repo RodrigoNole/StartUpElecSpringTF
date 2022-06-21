@@ -1,10 +1,11 @@
 package pe.edu.upc.StartUp.Elec.Business.Crud;
 
+
 import pe.edu.upc.StartUp.Elec.Model.Entity.Receipt;
 
 import java.util.List;
 
-public interface ReceiptService {
+public interface ReceiptService extends CrudService<Receipt, Integer>{
 
     public List<Receipt> getAll();
     public List<Receipt> findByMonth(String month);

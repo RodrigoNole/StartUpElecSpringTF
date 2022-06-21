@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: frag-head">
+    <meta charset="ISO-8859-1">
+    <title>New Type Card</title>
+</head>
+<body>
+
+<header th:insert="layout/layout :: frag-header"></header>
+<main>
+
+    <section>
+
+        <nav aria-label="breadcrumb" class="margin-20">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a th:href="@{/typeCards}">typeCards</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New</li>
+            </ol>
+        </nav>
+
+        <div class="card text-center margin-20">
+            <div class="card-header">
+                New Type Card
+            </div>
+            <div class="card-body" style="text-align: left;">
+
+                <form th:action="@{/typeCards/savenew}" th:object="${typeCard}" method="post"
+                      class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-3">
+                        <label for="number" class="form-label">number</label>
+                        <input type="text" class="form-control" th:field="*{number}" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="cvv" class="form-label">cvv</label>
+                        <input type="text" class="form-control" th:field="*{cvv}" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="expirationDate" class="form-label">expirationDate</label>
+                        <input type="text" class="form-control" th:field="*{expirationDate}" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-12" style="text-align: center;">
+                        <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> Pay</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="card-footer text-muted">
+
+            </div>
+        </div>
+    </section>
+
+</main>
+<footer th:replace="layout/layout :: frag-footer"></footer>
+
+</body>
+</html>

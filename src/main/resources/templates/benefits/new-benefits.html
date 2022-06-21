@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
 <head th:replace="layout/layout :: frag-head">
 	<meta charset="ISO-8859-1">
-	<title>New benefit</title>
+	<title>New Benefit</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 	
 	<div class="card text-center margin-20">
 	  <div class="card-header">
-	    benefits
+		  New Benefit
 	  </div>
 	  <div class="card-body" style="text-align: left;">
 	  	
@@ -42,6 +42,16 @@
 		    </div>
 		  </div>
 		  
+		   <div class="col-md-4">
+		    <label for="customer" class="form-label">Customer</label>
+		    <select class="form-select" th:field="*{customer}" required>
+		      <option selected disabled value="">Choose...</option>
+		      <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.firstName}">...</option>
+		    </select>
+		    <div class="invalid-feedback">
+		      Please select a valid state.
+		    </div>
+		  </div>
 		  
 		  
 		  <div class="col-12" style="text-align: center;">

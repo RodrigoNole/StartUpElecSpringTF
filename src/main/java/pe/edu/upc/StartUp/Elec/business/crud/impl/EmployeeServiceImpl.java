@@ -1,6 +1,7 @@
 package pe.edu.upc.StartUp.Elec.Business.Crud.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.StartUp.Elec.Business.Crud.EmployeeService;
 import pe.edu.upc.StartUp.Elec.Model.Entity.Employee;
@@ -29,6 +30,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee save(Employee employee) {
 
         return employeeRepository.save(employee);
+    }
+
+    @Override
+    public JpaRepository<Employee, Integer> getJpaRepository() {
+        return this.employeeRepository;
     }
 
     @Override

@@ -4,7 +4,7 @@ import pe.edu.upc.StartUp.Elec.Model.Entity.Benefit;
 
 import java.util.List;
 
-public interface BenefitService {
+public interface BenefitService extends CrudService<Benefit, Integer>{
 
 
     public List<Benefit> getAll();
