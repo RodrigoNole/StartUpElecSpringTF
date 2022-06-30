@@ -1,0 +1,66 @@
+section{
+	font-family: 'Raleway', sans-serif;
+}
+.imagen{
+	margin-top: -50px;
+	border: 5px solid #1F232C;
+}
+section[id]{
+	scroll-margin-top: 10px;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+.inicio h1{
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 5rem;
+	color: #ffffff;
+	position: absolute;
+	top: 50%;
+	left: 70%;
+	text-shadow: 0 0 8px rgb(0, 0, 0);
+}
+
+.nosotros h1 {
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 5rem;
+	position: absolute;
+	top: 150%;
+	left: 65%;
+	text-shadow: 0 0 8px rgb(0, 0, 0);
+}
+.nosotros p {
+	font-size: 1rem;
+	position: absolute;
+	top: 170%;
+	left: 57%;
+	text-align: justify;
+	text-shadow: 0 0 8px rgb(0, 0, 0);
+}
+
+.equipo h1 {
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 5rem;
+	position: center;
+	text-shadow: 0 0 8px rgb(0, 0, 0);
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+html, body, section {
+	height: 100%;
+	min-height: 100%;
+}
+body{
+	background-color: lightgray;
+}
+
+
+.form-check-input {
+	position: absolute;
+	margin-top: 0.4rem;
+	margin-left: 5.5rem;
+}

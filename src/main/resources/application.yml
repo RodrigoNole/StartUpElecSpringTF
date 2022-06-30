@@ -1,0 +1,16 @@
+server:
+    port: 8181
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: luisgustavo
+        url: jdbc:postgresql://localhost:5432/StartUpElecSpringTFDS
+        username: postgres
+    jpa:
+        database: postgresql
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true

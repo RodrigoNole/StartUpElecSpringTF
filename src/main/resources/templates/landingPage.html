@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+    <link th:href="@{/css/solid.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styleLanding.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <title> StartUp Elec</title>
+    <link rel="icon" type="image/png" href="/images/landingPage/icon.png">
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top" style="background-color: #1F232C;">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand hidden-lg-up" href="#"><img src="/images/landingPage/logo.png" alt="" width="93.375"
+                                                           height="33"
+                                                           class="d-inline-block align-text-top"></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand hidden-md-down" href="#"><img src="/images/landingPage/logo.png" alt=""
+                                                                 width="93.375" height="33"
+                                                                 class="d-inline-block align-text-top"></a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#equipo">Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contactanos">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="inicio" id="inicio">
+        <img src="/images/landingPage/fondoInicio.png" class="img-fluid" alt="fondoInicio">
+        <div>
+            <h1 class="font-weight-bold" style="color: white;">StartUp Elec</h1>
+        </div>
+
+    </section>
+
+    <section class="nosotros" id="nosotros">
+        <img src="/images/landingPage/fondoNosotros.png" class="img-fluid" alt="fondoInicio">
+
+        <h1 class="font-weight-bold text-center" style="color: white;">Nosotros</h1>
+        <p style="color: white;">
+            Somos un grupo de estudiantes de la Carrera de Ingeniería de Sistemas de Información, <br>
+            que está comprometido arduamente con el proyecto “Startup Elec”. Este proyecto nació <br>
+            debido a que detectamos que debido a coyuntura de la pandemia COVID 19, varias <br>
+            empresas que brindan servicios atravesaron una pérdida financiera significativa, <br>
+            esto debido a que muchos de sus clientes no se acercaban físicamente a los centros <br>
+            autorizados a realizar el pago de sus recibos por temor a exponerse a un posible contagio. </p>
+
+    </section>
+    <br>
+    <br>
+    <section class="equipo" id="equipo">
+        <br>
+        <br>
+        <div>
+            <h1 class="font-weight-bold text-center" style="color: white;">Equipo</h1>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!-- inicio de card -->
+        <div class="container">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="/images/landingPage/fontLuis.png" alt="Card image cap">
+                    <div class="text-center">
+                        <img src="/images/landingPage/Luis.png" alt="Luis Murguía Maldonado"
+                             class="img-fluid imagen rounded-circle" height="200px" width="200px">
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title text-center">Luis Murguía </h4>
+                        <p class="card-text text-justify">Soy estudiante de la carrera de Ingeniería de Sistemas de la
+                            Información. Yo me comprometo a terminar este proyecto y ayudar a mis compañeros con los
+                            posibles problemas que podrían suceder en este proyecto. Mis fortalezas son que soy puntual
+                            y responsable.</p>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="/images/landingPage/fontRodrigo.png" alt="Card image cap">
+                    <div class="text-center text-center">
+                        <img src="/images/landingPage/Rodrigo.png" alt="Rodrigo Nole Berrocal"
+                             class="img-fluid imagen rounded-circle" height="200px" width="200px">
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title text-center">Rodrigo Nole</h4>
+                        <p class="card-text text-justify">Soy estudiante de la carrera de ingeniería de sistemas de
+                            información. Me gusta que las cosas salgan bien, y estoy arduamente comprometido para que
+                            los resultados obtenidos en la culminación de este proyecto sean exitosos.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="d-flex justify-content-center align-items-center " id="contactanos">
+
+        <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">
+            <div class="mb-4 d-flex justify-content-start align-items-center">
+
+                <h4>  <i class="bi bi-chat-left-quote"></i> &nbsp; Contáctanos</h4>
+            </div>
+            <div class="mb-1">
+                <form id = "contacto" >
+                    <div class="mb-4 d-flex justify-content-between">
+                        <div>
+                            <label for="nombre"> <i class="bi bi-person-fill"></i> Nombre</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder= "ej: Luis" required>
+                            <div class="nombre text-danger "></div>
+                        </div>
+                        <div >
+                            <label for="apellido"> <i class="bi bi-person-bounding-box"></i> Apellido</label>
+                            <input type="text" class="form-control" name="apellido" id="apellido" placeholder= "ej: Murguía" required>
+                            <div class="apellido text-danger"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="correo"><i class="bi bi-envelope-fill"></i> Correo</label>
+                        <input type="email" class="form-control" name="correo" id="correo" placeholder= "ej: lmurguia@gmail.com" required>
+                        <div class="correo text-danger"></div>
+
+                    </div>
+                    <div class="mb-4">
+                        <label for="sexo"><i class="bi bi-gender-ambiguous"></i> Sexo: </label>
+                        <input type="radio" class="form-check-input"  name="sexo"  value="masculino" > &nbsp;&nbsp; Masculino
+                        <input type="radio" class="form-check-input" name="sexo"  value="femenino" >&nbsp;&nbsp; Femenino
+                        <div class="sexo text-danger"></div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="mensaje"> <i class="bi bi-chat-right-dots-fill" required></i> Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" class="form-control" placeholder="ej: buenos dias"></textarea>
+                        <div class="mensaje text-danger"></div>
+                    </div>
+
+                    <div class="mb-2">
+                        <button id ="botton" class="col-12 btn btn-warning d-flex justify-content-between ">
+                            <span>Enviar </span><i id="icono" class="bi bi-cursor-fill "></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</main>
+
+<footer>
+
+</footer>
+
+
+<script src="@{/js/bootstrap.bundle.min.js}"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>
