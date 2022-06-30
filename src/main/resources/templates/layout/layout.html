@@ -1,101 +1,89 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="frag-head">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
-    <link th:href="@{/css/solid.min.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
-    <title> StartUp Elec</title>
-    <link rel="icon" type="image/png" href="/images/landingPage/icon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<link th:href="@{/css/styleLanding.css}" rel="stylesheet">
+<title>StartUp Elec</title>
+<link rel="icon" type="image/png" href="/images/landingPage/icon.png">
 </head>
 <body>
 
-<header th:fragment="frag-header">    <!-- Crear un fragmento -->
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top" style="background-color: #1F232C;">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand hidden-lg-up" href="#"><img src="/images/landingPage/logo.png" alt="" width="93.375"
+	<header th:fragment="frag-header">
+		<!-- Crear un fragmento -->
+		<nav class="navbar navbar-expand-lg navbar-dark"
+			style="background-color: #1F232C;">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			 <a class="navbar-brand hidden-lg-up" href="#"><img src="/images/landingPage/logo.png" alt="" width="93.375"
                                                            height="33"
                                                            class="d-inline-block align-text-top"></a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand hidden-md-down" href="#"><img src="/images/landingPage/logo.png" alt=""
-                                                                 width="93.375" height="33"
-                                                                 class="d-inline-block align-text-top"></a>
-            <ul class="navbar-nav ml-auto">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<a class="navbar-brand hidden-md-down" href="#"><img
+					src="/images/landingPage/logo.png" alt="" width="93.375"
+					height="33" class="d-inline-block align-text-top"></a>
+				<ul class="navbar-nav ml-auto">
 
-                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" href="customers">Customers</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" href="receipts">Receipts</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" href="benefits">Benefits</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" href="publications">Publications</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
-                    <a class="nav-link" href="homes">Homes</a>
-                </li>
-
-
-                <li class="nav-item" sec:authorize="hasRole('ROLE_EMPLOYEE')">
-                    <a class="nav-link" href="publications">Publications</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_EMPLOYEE')">
-                    <a class="nav-link" href="employees">Employees</a>
-                </li>
+					<li class="nav-item"
+						sec:authorize="hasAnyRole('ROLE_ADMINISTRATOR')"><a
+						class="nav-link" href="customers">Customers</a></li>
+					<li class="nav-item"
+						sec:authorize="hasAnyRole('ROLE_CUSTOMER','ROLE_ADMINISTRATOR')">
+						<a class="nav-link" href="receipts">Receipts</a>
+					</li>
+					<li class="nav-item"
+						sec:authorize="hasAnyRole('ROLE_CUSTOMER','ROLE_ADMINISTRATOR')">
+						<a class="nav-link" href="benefits">Benefits</a>
+					</li>
+					<li class="nav-item"
+						sec:authorize="hasAnyRole('ROLE_CUSTOMER','ROLE_ADMINISTRATOR')">
+						<a class="nav-link" href="homes">Homes</a>
+					</li>
 
 
-                <li class="nav-item" sec:authorize="hasRole('ROLE_ADMINISTRATOR')">
-                    <a class="nav-link" href="benefits">Benefits</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_ADMINISTRATOR')">
-                    <a class="nav-link" href="employees">Employees</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_ADMINISTRATOR')">
-                    <a class="nav-link" href="receipts">Receipts</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasRole('ROLE_ADMINISTRATOR')">
-                    <a class="nav-link" href="customers">Customers</a>
-                </li>
-            </ul>
+					<li class="nav-item"
+						sec:authorize="hasAnyRole('ROLE_EMPLOYEE','ROLE_CUSTOMER')">
+						<a class="nav-link" href="publications">Publications</a>
+					</li>
+					<li class="nav-item"
+						sec:authorize="hasAnyRole('ROLE_EMPLOYEE','ROLE_ADMINISTRATOR')">
+						<a class="nav-link" href="employees">Employees</a>
+					</li>
+				</ul>
 
-            <div class="dropdown" sec:authorize="isAuthenticated()">
-                <a class="btn btn-outline-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                   data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user-circle"></i> <span sec:authentication="name">Username</span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">View Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Change Password</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
-                </ul>
-            </div>
+				<div class="dropdown" sec:authorize="isAuthenticated()">
+					<a class="btn btn-outline-warning dropdown-toggle" href="#"
+						role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+						aria-expanded="false"> <i class="fas fa-user-circle"></i> <span
+						sec:authentication="name">Username</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						<li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
+					</ul>
+				</div>
 
 
-        </div>
-    </nav>
-</header>
-<main>
-    <section>
-
-    </section>
-</main>
-<footer th:fragment="frag-footer">
-    <p></p>
-    <script src="@{/js/bootstrap.bundle.min.js}"></script>
-</footer>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section></section>
+	</main>
+	<footer th:fragment="frag-footer">
+		<p></p>
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	</footer>
 
 </body>
 </html>

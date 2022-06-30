@@ -98,4 +98,21 @@ public class ReceiptController {
         }
         return "redirect:/receipts";
     }
+
+    @GetMapping("{id}/pay")
+    public String payReceipt(Model model, @PathVariable("id") Integer id) {
+        try {
+            if (receiptService.existsById(id)) {
+                receiptService.deleteById(id);
+            } else {
+                return "redirect:/typeCards";
+            }
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return "redirect:/typeCards/new";
+    }
+
 }

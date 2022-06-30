@@ -29,13 +29,68 @@ public class Receipt implements Serializable {
     private String description;
 
     @Column(name = "receipts_creation_date", length = 50, nullable = false)
-    private Date creationDate;
+    private String creationDate;
 
     @Column(name = "receipts_expiration_date", length = 50, nullable = false)
-    private Date expirationDate;
+    private String expirationDate;
 
     @JoinColumn(name = "home_id")
     @OneToOne(fetch = FetchType.LAZY)
     private Home home;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public Home getHome() {
+        return home;
+    }
+
+    public void setHome(Home home) {
+        this.home = home;
+    }
 }

@@ -41,7 +41,7 @@ public class EmployeeController {
     @PostMapping("savenew")
     public String saveEmployee(Model model,@ModelAttribute("employee")Employee employee) {
         try{
-            Employee EmployeeSaved= employeeService.save(employee);
+            Employee EmployeeSaved = employeeService.save(employee);
         }catch (Exception e){
             e.printStackTrace();
         }

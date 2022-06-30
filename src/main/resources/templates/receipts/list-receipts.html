@@ -38,7 +38,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="receipts : ${receipts}">
+                    <tr th:each="receipt : ${receipts}">
                         <th scope="row" th:text="${receipt.id}">1</th>
                         <td th:text="${receipt.month}">Mark</td>
                         <td th:text="${receipt.amount}">Otto</td>
@@ -46,10 +46,12 @@
                         <td th:text="${receipt.creationDate}">Otto</td>
                         <td th:text="${receipt.expirationDate}">Otto</td>
                         <td>
-                            <a class="btn btn-warning" th:href="@{'/customers/' + ${receipt.id} + '/edit'}"
+                            <a sec:authorize="hasRole('ROLE_ADMINISTRATOR')"class="btn btn-warning" th:href="@{'/receipts/' + ${receipt.id} + '/edit'}"
                                role="button"> <i class="fas fa-edit"></i> </a>
-                            <a class="btn btn-danger" th:href="@{'/customers/' + ${receipt.id} + '/del'}" role="button">
+                            <a sec:authorize="hasRole('ROLE_ADMINISTRATOR')"class="btn btn-danger" th:href="@{'/receipts/' + ${receipt.id} + '/del'}" role="button">
                                 <i class="fas fa-trash-alt"></i> </a>
+                            <a sec:authorize="hasRole('ROLE_CUSTOMER')"class="btn btn-success" th:href="@{'/receipts/' + ${receipt.id} + '/pay'}" role="button">
+                                <i class="fa-solid fa-badge-check"></i>Pay</a>
                         </td>
                     </tr>
                     </tbody>
@@ -57,7 +59,7 @@
 
             </div>
             <div class="card-footer text-muted">
-                <a class="btn btn-primary" th:href="@{/homes/new}" role="button"> <i class="fas fa-plus"></i> New
+                <a sec:authorize="hasRole('ROLE_ADMINISTRATOR')" class="btn btn-primary" th:href="@{/receipts/new}" role="button"> <i class="fas fa-plus"></i> New
                 </a>
             </div>
         </div>

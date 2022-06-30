@@ -40,15 +40,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		// Aqui realiza la configuración de los permisos
+				.antMatchers("/*.js", "/*.css").permitAll()
 				.antMatchers("/").permitAll()
-				.antMatchers("/receipts").hasRole("ADMINISTRATOR")
-				.antMatchers("/receipts/**/list").hasAnyAuthority("ACCESS_VIEW_INFO","ACCESS_ALL")
-				.antMatchers("/employees/**").hasRole("ADMINISTRATOR")
-				.antMatchers("/customers/**").hasRole("ADMINISTRATOR")
-				.antMatchers("/publications").hasRole("EMPLOYEE")
-				.antMatchers("/publications/**/list").hasAnyAuthority("ACCESS_VIEW_INFO","ACCESS_ALL")
-				.antMatchers("/homes/**").hasRole("CUSTOMER")
-				.antMatchers("/typeCards/**").hasRole("CUSTOMER")
+				.antMatchers("/receipts/**").access("hasRole('ROLE_ADMINISTRATOR') or hasRole('ROLE_CUSTOMER')")
+				.antMatchers("/customers/**").access("hasRole('ROLE_ADMINISTRATOR')")
+				.antMatchers("/benefits/**").access("hasRole('ROLE_ADMINISTRATOR') or hasRole('ROLE_CUSTOMER')")
+				.antMatchers("/homes/**").access("hasRole('ROLE_ADMINISTRATOR') or hasRole('ROLE_CUSTOMER')")
+
+				.antMatchers("/publications/**").access("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_EMPLOYEE')")
+				.antMatchers("/employees/**").access("hasRole('ROLE_ADMINISTRATOR') or hasRole('ROLE_EMPLOYEE')")
+
 			.and()
 				.formLogin();
 	}

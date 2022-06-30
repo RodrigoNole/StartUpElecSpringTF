@@ -37,10 +37,10 @@ public class HomeServiceImpl implements HomeService {
         homeRepository.deleteById(id);
     }
 
-	@Override
-	public JpaRepository<Home, Integer> getJpaRepository() {
-		// TODO Auto-generated method stub
-		return this.homeRepository;
-	}
+    @Override
+    public JpaRepository<Home, Integer> getJpaRepository() {
+        // TODO Auto-generated method stub
+        return this.homeRepository;
+    }
 
 }
