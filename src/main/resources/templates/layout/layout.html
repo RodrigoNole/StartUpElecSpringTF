@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<<<<<<< Updated upstream
 <header th:fragment="frag-header">	<!-- Crear un fragmento -->
 	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top" style="background-color: #1F232C;">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -43,6 +44,65 @@
 			</ul>
 		</div>
 	</nav>
+=======
+<header th:fragment="frag-header">    <!-- Crear un fragmento -->
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top" style="background-color: #1F232C;">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand hidden-lg-up" href="#"><img src="/images/landingPage/logo.png" alt="" width="93.375"
+                                                           height="33"
+                                                           class="d-inline-block align-text-top"></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand hidden-md-down" href="#"><img src="/images/landingPage/logo.png" alt=""
+                                                                 width="93.375" height="33"
+                                                                 class="d-inline-block align-text-top"></a>
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item" sec:authorize="hasAnyRole('ROLE_CUSTOMER','ROLE_ADMINISTRATOR')">
+                    <a class="nav-link" href="customers">Customers</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasAnyRole('ROLE_CUSTOMER','ROLE_ADMINISTRATOR')">
+                    <a class="nav-link" href="receipts">Receipts</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasAnyRole('ROLE_CUSTOMER','ROLE_ADMINISTRATOR')">
+                    <a class="nav-link" href="benefits">Benefits</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasAnyRole('ROLE_CUSTOMER','ROLE_ADMINISTRATOR')">
+                    <a class="nav-link" href="homes">Homes</a>
+                </li>
+
+
+                <li class="nav-item" sec:authorize="hasAnyRole('ROLE_EMPLOYEE','ROLE_CUSTOMER')">
+                    <a class="nav-link" href="publications">Publications</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasAnyRole('ROLE_EMPLOYEE','ROLE_ADMINISTRATOR')">
+                    <a class="nav-link" href="employees">Employees</a>
+                </li>
+            </ul>
+
+            <div class="dropdown" sec:authorize="isAuthenticated()">
+                <a class="btn btn-outline-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user-circle"></i> <span sec:authentication="name">Username</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">View Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+>>>>>>> Stashed changes
 </header>
 <main>
 	<section>
